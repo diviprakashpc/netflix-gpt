@@ -1,0 +1,44 @@
+To install Tailwind,
+
+- Create React App
+- Configured Tailwind
+- Header
+- Login Form
+- Sign Up Form
+
+
+
+# Features
+- Login/Sign up
+    - Login/Signup for Form
+    - Rediect to browser page 
+- Browse (after authentication)
+    - Header    
+    - Main Movie
+        - Trailer in Background
+        - Title & Description
+        - Movie Suggestion
+            - MovieList * N
+
+- Netflix GPT
+    - Search Bar
+    - Movie Suggestions
+
+
+
+
+
+
+
+======================LOGIN.JS======================
+
+There are two ways to store inputs. 1) useState 2) with useRef.
+
+When we click on Signin button it tries to submit the form, which causes the page reload. To avoid this use e.preventDefault() at click handler.
+
+Since I know how useRef works I wont be noting it.
+
+useRef is used to reference a element in the dom . (Many other usecases he didn't tell , I know about it after working in KB)
+
+https://stackoverflow.com/questions/76086163/what-is-better-usestate-or-useref-when-handling-multiple-form-inputs-in-react 
+Check this.
