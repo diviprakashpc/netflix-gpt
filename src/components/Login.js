@@ -7,7 +7,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { DEFAULT_USER_AVATAR } from "../utils/constants";
+import { BG_URL, DEFAULT_USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isUserWantSignIn, setIsUserWantSignIn] = useState(true);
@@ -84,7 +84,7 @@ const Login = () => {
       <div>
         <img
           className="absolute"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/dd4dfce3-1a39-4b1a-8e19-b7242da17e68/86742114-c001-4800-a127-c9c89ca7bbe4/IN-en-20240527-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={BG_URL}
           alt="logo"
         />
       </div>
