@@ -4,8 +4,8 @@ import VideoTitle from './VideoTitle'
 import VideoBackground from './VideoBackground'
 
 const MainContainer = () => {
-    const movies = useSelector((store) => store.movies?.nowPlayingMovies)
-    if(!movies) return; // This is also known as Early Return
+    const movies = useSelector((store) => store.movies?.movieList['now_playing'])
+    if(!movies) return <h1>Loading</h1>; // This is also known as Early Return
     
     const mainMovie = movies[0];
 
