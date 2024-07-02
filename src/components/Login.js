@@ -4,7 +4,6 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 
 import { checkValidData } from "../utils/validate";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { BG_URL, DEFAULT_USER_AVATAR } from "../utils/constants";
@@ -13,8 +12,6 @@ const Login = () => {
   const [isUserWantSignIn, setIsUserWantSignIn] = useState(true);
 
   const [errorMessage, setErrorMessage] = useState("")
-
-  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -56,7 +53,6 @@ const Login = () => {
           });
         })
         .catch((error) => {
-          const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorMessage)
         });
@@ -81,14 +77,14 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div className="absolute">
         <img
-          className="absolute"
+          className="h-screen object-cover"
           src={BG_URL}
           alt="logo"
         />
       </div>
-      <form className="w-3/12 absolute p-12 bg-black mx-auto my-36 right-0 left-0 text-white rounded-lg bg-opacity-80">
+      <form className="w-full md:w-3/12 absolute p-12 bg-black mx-auto my-36 right-0 left-0 text-white rounded-lg bg-opacity-80">
         <h1 className="font-bold text-3xl py-4">
           {isUserWantSignIn ? "Sign In" : "Sign Up"}
         </h1>

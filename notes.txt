@@ -37,7 +37,12 @@ To install Tailwind,
 - GPT Search Bar
 - Multilingual Feature in our App
 - Integrete GPT APIs.
-
+- Get Gemini api key
+- Fetched gpt movie suggestions from tmdb
+- create gpt slice and added data over there
+- Memoization 
+- Adding .env file to gitignore
+- Made our site responsive.
 
 
 

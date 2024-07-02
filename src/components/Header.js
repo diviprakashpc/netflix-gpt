@@ -58,15 +58,16 @@ const Header = () => {
         // An error happened.
       });
   };
+  // md means more than medium i.e. dekstop. sm is mode than small that is tablet. default is mobile.
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
+    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
       <img
         src={LOGO}
         alt="logo"
-        className="w-44 "
+        className="w-44 mx-auto md:mx-0 "
       />
       {user &&
-      <div className="flex p-2">
+      <div className="flex p-2 justify-between">
      {showGptSearch && <select onChange={handleLanguageChange} className="p-2 m-2 bg-gray-900 text-white">
         {SUPPORTED_LANGUAGES.map((lang)=> <option value={lang.identifier} key={lang.identifier}>{lang.name}</option>)}
       </select>}
@@ -74,7 +75,7 @@ const Header = () => {
         {!showGptSearch ? "GPT Search" : "Homepage"}
       </button>
        <img
-          className="w-12 h-12"
+          className="hidden md:block w-12 h-12"
           alt="usericon"
           src={user &&  user.photoURL}
         />
