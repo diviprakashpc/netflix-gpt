@@ -1,0 +1,4 @@
+=> Future Scope and Possibilities : -
+
+- Make the movie titles of same size.
+- See if it is possible to animate the titles on hover and increase their photo size on hover.
