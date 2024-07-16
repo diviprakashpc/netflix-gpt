@@ -1,9 +1,8 @@
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import React, { useEffect } from "react";
+import { signOut } from "firebase/auth";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
@@ -17,37 +16,14 @@ const Header = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const { uid, email, displayName, photoURL } = user;
-        dispatch(
-          addUser({
-            uid: uid,
-            email: email,
-            displayName: displayName,
-            photoURL: photoURL,
-          })
-        );
-        navigate("/browse");
-      } else {
-        dispatch(removeUser());
-        navigate("/");
-      }
-    });
-    // Unsbscribe when component unmounts.
-    return () => {
-      unsubscribe();
-    };
-  }, []);
 
   const handleGptSearchClick = () => {
-    // Toggle GPT Search button
+    if(!showGptSearch) navigate("/gpt-search") 
+    else navigate('/browse')
     dispatch(toggleGptSearchView());
   };
 
   const handleLanguageChange = (e) => {
-    console.log(e.target.value);
     dispatch(changeLanguage(e.target.value));
   };
 

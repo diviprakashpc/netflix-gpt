@@ -75,16 +75,16 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className="blood-background">
       <Header />
-      <div className="absolute">
+      {/* <div className="absolute">
         <img
           className="h-screen object-cover w-screen"
           src={BG_URL}
           alt="logo"
         />
-      </div>
-      <form className="w-full md:w-3/12 absolute p-12 bg-black mx-auto my-36 right-0 left-0 text-white rounded-lg bg-opacity-80">
+      </div> */}
+      <form className=" z-10 md:w-3/12 p-12 mt-[25vh] mb-[25vh] bg-transparent text-white rounded-lg bg-opacity-80">
         <h1 className="font-bold text-3xl py-4">
           {isUserWantSignIn ? "Sign In" : "Sign Up"}
         </h1>

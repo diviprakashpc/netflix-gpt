@@ -1,13 +1,42 @@
 
 import { Provider } from 'react-redux';
-import './App.css';
+import './App.scss';
 import Body from './components/Body';
 import appStore from './utils/appStore';
+import React from "react";
+import Login from "./components/Login";
+import Browse from "./components/Browse";
+import {
+  RouterProvider,
+  createBrowserRouter
+} from "react-router-dom";
+import GptSearch from "./components/GptSearch";
 
 function App() {
+  const appRouter = createBrowserRouter([
+    {
+      path : '/',
+      element : <Body/>,
+      children: [
+    {
+      path: "/",
+      element: <Login />,
+    },
+    {
+      path: "/browse",
+      element: <Browse />,
+    },
+    {
+      path : "/gpt-search",
+      element : <GptSearch/>
+    },
+  ]
+  }]);
+
   return (
     <Provider store={appStore}>
-    <Body/>
+      <RouterProvider router={appRouter}>
+      </RouterProvider>
     </Provider>
   );
 }

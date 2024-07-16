@@ -2,22 +2,17 @@ import React from 'react'
 import GptSearchBar from './GptSearchBar'
 import GptMovieSuggestions from './GptMovieSuggestions'
 import { BG_URL } from '../utils/constants'
+import Header from './Header'
 
 const GptSearch = () => {
   return (
-    <>
-        <div className='fixed -z-10'>
-        <img
-        className='h-screen object-cover w-screen'
-          src={BG_URL}
-          alt="logo"
-        />
-        </div>
+    <div className='gpt-search-container'>
         <div className=''>
+        <Header/>
         <GptSearchBar/>
         <GptMovieSuggestions/>
     </div>
-    </>
+    </div>
   )
 }
 

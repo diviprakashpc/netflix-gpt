@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Normal scrollbar styles */
+  ::-webkit-scrollbar {
+    margin-top: 4px;
+    background-color: #2D3436;
+    height: 8px;
+  
+    /* Track */
+    &-track {
+      background-color: black;
+      height: 5px;
+    }
+  
+    /* Handle */
+    &-thumb {
+      background-color: #2D3436;
+      border-radius: 5px;
+  
+      /* Handle on hover */
+      &:hover {
+        background-color: #2C3E50;
+      }
+    }
+  }
+  
+  /* Media query for hiding scrollbars */
+  @media screen and (max-width: 600px) {
+    /* WebKit browsers */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  
+    /* Firefox */
+    body {
+      scrollbar-width: none;
+    }
+  
+    /* Edge */
+    body {
+      -ms-overflow-style: none;
+    }
+  }
+
+  @mixin dots($count) {
+    $text-shadow: ();
+    @for $i from 0 through $count {
+      $text-shadow: $text-shadow,
+                   (-.5+(random()) * 3) + em
+                   (-.5+(random()) * 3) + em
+                   7px
+                rgba(255, 0, 0, 0.774);
+    }
+    text-shadow: $text-shadow;
+  }
+
+
+.gpt-search-background::before{
+
+}
+
+
+.blood-background{
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* justify-content: center; */
+    gap: 10vh;
+    background-color: black;
+}
+.blood-background::before,.gpt-search-background::before{ 
+  @include dots(60);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  font-size: 57px; // It is important for content to take size and shadows around it
+  width: 3em;
+  height: 3em;
+  content: '.';
+  mix-blend-mode: screen;
+  animation: 44s -27s move infinite ease-in-out alternate;
+  /*The content is given some width height and positoning so the dots(shadows) around it will be bigger.*/
+}
+
+@keyframes move {
+    from {
+      transform: rotate(0deg) scale(12) translateX(-20px);
+    }
+    to {
+      transform: rotate(360deg) scale(18) translateX(20px);
+    }
+    /*This scale scales those small dots (shadows) so much that it look like blurry balls rotating and translating.*/
+    /*So there is content '.' added to before and after of body and head. This content is made invisible. And then around this content we have put 'count' text shadows with diffrent colors.(Here hardcoded to purple)/ And given the animation to these dots to scale from 12 to 18/ That is since 12 is very much, it will blur and 18 is much blur.*/
+  }
