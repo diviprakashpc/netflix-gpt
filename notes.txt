@@ -46,8 +46,21 @@ To install Tailwind,
 
 
 
+====================================
+- Simulated a config that backend sends telling the features for the app in appjs. -- Done
+- Add a decent Background => Done
+- Fix the bug where if you change the language and go back to browse and again come back to gpt search then it retains the last selected language in the search bar but shows english in the dropdown.
+- Find a way in scss to write a variable css, that is block of multiple css and can be used in a class with one line.
+- On Clicks like Signout add a loader on a screen. A red orb loader could look beautiful. 
+- On user gettting offline show a toast that user is offline. -- Done
+- Create A searched movie card - Done 
+- Create shimmer ui for that movie card. 
+- Create a loader for that Movie sugeestions api call.(ORB WOULD BE TO MUCH COOL)
+- Now you just save poster path and name and some important details in  redux that it.
+- Try to implement a feature if user has selected hindi then show movie names in hindi.
 
 
+====================================
 
 # Features
 - Login/Sign up

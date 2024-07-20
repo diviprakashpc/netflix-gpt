@@ -5,10 +5,12 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
     // This is right now handled from frontend as there is no backend to send config.
@@ -60,12 +62,18 @@ const Body = () => {
     };
   }, []);
 
+  if(onlineStatus === false){
+    return (
+      <h1>
+        Looks like you're offline ! Please check your internet connection.
+      </h1>
+    )
+  }
+
 
 
   return (
-    <div>
       <Outlet/>
-    </div>
   );
 };
 

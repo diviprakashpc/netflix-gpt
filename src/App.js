@@ -11,6 +11,7 @@ import {
   createBrowserRouter
 } from "react-router-dom";
 import GptSearch from "./components/GptSearch";
+import SearchResultCard from './components/SearchResultCard';
 
 function App() {
   const appRouter = createBrowserRouter([

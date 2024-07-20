@@ -3,6 +3,7 @@ import { lang } from '../utils/languageConstant'
 import { useDispatch, useSelector } from 'react-redux'
 import { API_OPTIONS } from '../utils/constants'
 import { addGptMovieResult } from '../utils/gptSlice'
+import {model} from '../utils/genAi'
 
 
 const GptSearchBar = () => {
@@ -16,7 +17,7 @@ const GptSearchBar = () => {
     const handleGptSearchClick = async () => {
         // Make an api call to gpt and get movie results
 
-        // const gptQuery = "Act as a Movie Recommendation system and suggest some movies for the query : " + searchText.current.value + " . Only give me names of 5 movies, comma seperated like the example result given ahead. Example Result : Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
+        // const gptQuery = "Act as a Movie Recommendation system and suggest some movies for the query : " + searchText.current.value + " . Give names of as much movies as possible with limit of 50 movies, comma seperated like the example result given ahead. Example Result : Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
 
         // const result = await model.generateContent(gptQuery);
         // const response = await result.response
@@ -52,8 +53,8 @@ const GptSearchBar = () => {
 
 
   return (
-    <div className='pt-[35%] md:pt-[10%] flex justify-center'>
-        <form onSubmit={(e)=>e.preventDefault()} className='w-full md:w-1/2 bg-black grid grid-cols-12'>
+    <div className=' p-4 flex justify-center w-full'>
+        <form onSubmit={(e)=>e.preventDefault()} className='w-full md:w-1/2 grid grid-cols-12'>
             <input type='text'
              className='p-4 m-4 col-span-8'
              placeholder={lang[langKey].whatWouldYouLikeToWatchToday}

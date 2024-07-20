@@ -6,10 +6,10 @@ import Header from './Header'
 
 const GptSearch = () => {
   return (
-    <div className='gpt-search-container'>
-        <div className=''>
+    <div className=' h-full w-full gpt-search-container'>
+        <div className='blood-background'>
         <Header/>
-        <GptSearchBar/>
+        <GptSearchBar/> 
         <GptMovieSuggestions/>
     </div>
     </div>

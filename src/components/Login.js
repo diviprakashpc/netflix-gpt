@@ -75,16 +75,11 @@ const Login = () => {
   }
 
   return (
+    <>
     <div className="blood-background">
       <Header />
-      {/* <div className="absolute">
-        <img
-          className="h-screen object-cover w-screen"
-          src={BG_URL}
-          alt="logo"
-        />
-      </div> */}
-      <form className=" z-10 md:w-3/12 p-12 mt-[25vh] mb-[25vh] bg-transparent text-white rounded-lg bg-opacity-80">
+      <div className="w-full flex justify-center">
+      <form className="md:w-3/12 p-12 bg-transparent text-white rounded-lg bg-opacity-80">
         <h1 className="font-bold text-3xl py-4">
           {isUserWantSignIn ? "Sign In" : "Sign Up"}
         </h1>
@@ -118,7 +113,10 @@ const Login = () => {
             : "Already registered? Sign In Now."}
         </p>
       </form>
+]     </div>
     </div>
+
+    </>
   );
 };
 

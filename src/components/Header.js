@@ -16,6 +16,13 @@ const Header = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   const dispatch = useDispatch();
 
+  let headerStyle = "w-full px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between"
+
+  const location = window.location
+  if(location.pathname=="/browse"){
+    headerStyle = headerStyle + " absolute"
+  }
+
 
   const handleGptSearchClick = () => {
     if(!showGptSearch) navigate("/gpt-search") 
@@ -38,7 +45,7 @@ const Header = () => {
   };
   // md means more than medium i.e. dekstop. sm is mode than small that is tablet. default is mobile.
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
+    <div className={headerStyle}>
       <img src={LOGO} alt="logo" className="w-44 mx-auto md:mx-0 " />
       {user && (
         <div className="flex p-2 justify-between">
