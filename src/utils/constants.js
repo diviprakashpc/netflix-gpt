@@ -33,6 +33,22 @@ export const SUPPORTED_LANGUAGES = [
 
 ]
 
+const sampleMovieCard = {
+  id : '',
+  poster_path : 'sample.path'
+}
+
+ let emptyMoviesForShimmer = [];
+
+for(let i = 0 ; i < 10 ; i++){
+  emptyMoviesForShimmer.push({
+    id : i,
+    poster_path : 'sample_path'
+  })
+}
+
+export {emptyMoviesForShimmer}
+
 
 export const OPEN_AI_KEY = process.env.REACT_APP_OPEN_AI_KEY
 export const GEN_AI_KEY = process.env.REACT_APP_GEN_AI_KEY

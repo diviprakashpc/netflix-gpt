@@ -54,7 +54,7 @@ To install Tailwind,
 - On Clicks like Signout add a loader on a screen. A red orb loader could look beautiful. 
 - On user gettting offline show a toast that user is offline. -- Done
 - Create A searched movie card - Done 
-- Create shimmer ui for that movie card. 
+- Create shimmer ui for that movie card in MovieList. (Done) 
 - Create a loader for that Movie sugeestions api call.(ORB WOULD BE TO MUCH COOL)
 - Now you just save poster path and name and some important details in  redux that it.
 - Try to implement a feature if user has selected hindi then show movie names in hindi.
