@@ -9,11 +9,12 @@ import { useSelector } from "react-redux";
 import useGetMoviesBasedOnCategory from "../hooks/useGetMoviesBasedOnCategory";
 
 const Browse = () => {
-  useGetMoviesBasedOnCategory('now_playing') // First one is now playing
+ const [isNowPlayingMoviesLoading ,isNowPlayingMoviesError] =  useGetMoviesBasedOnCategory('now_playing') // First one is now playing
+ const showShimmerInMainContainer = isNowPlayingMoviesLoading || isNowPlayingMoviesError
   return ( 
     <div>
       <Header /> 
-      <MainContainer />
+      <MainContainer showShimmer = {showShimmerInMainContainer}/>
       <SecondaryContainer />
       )
     </div>

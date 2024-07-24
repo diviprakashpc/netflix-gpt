@@ -17,8 +17,8 @@ const VideoBackground = ({ movieId }) => {
   'autohide': 1
  }
  const queryString = Object.keys(playerVars).map(key => `${key}=${playerVars[key]}`).join('&');
- console.log(queryString)
-  useMovieTrailer(movieId)
+
+ useMovieTrailer(movieId)
   return (
     <div className="">
       <iframe

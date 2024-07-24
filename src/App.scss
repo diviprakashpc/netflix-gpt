@@ -123,6 +123,12 @@
     border-radius: 7px;
   }
 
+  .shimmer-main-card{
+    opacity: 0.7;
+    animation: shimmer-card-animation 1s linear 0s infinite alternate;
+    border-radius: 7px;
+  }
+
   @keyframes shimmer-card-animation {
     0% {
       background-color:hsl(200,20%,70%)
