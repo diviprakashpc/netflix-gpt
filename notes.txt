@@ -56,11 +56,11 @@ To install Tailwind,
 - Create A searched movie card - Done 
 - Create shimmer ui for that movie card in MovieList. (Done) 
 - Create shimmer ui for main container that plays the video in the Background. (Done)
-- Create a loader for that Movie sugeestions api call.(ORB WOULD BE TO MUCH COOL)
+- Create a loader for that Movie sugeestions api call.(ORB WOULD BE TO MUCH COOL) (Orb Done)
 - Now you just save poster path and name and some important details in  redux that it.
 - Try to implement a feature if user has selected hindi then show movie names in hindi.
 - Disable search button if loading is in progress.
-- 
+- Implement Redux toolkit for getting movie search results (Done)
 
 
 ====================================
