@@ -59,6 +59,8 @@ To install Tailwind,
 - Create a loader for that Movie sugeestions api call.(ORB WOULD BE TO MUCH COOL)
 - Now you just save poster path and name and some important details in  redux that it.
 - Try to implement a feature if user has selected hindi then show movie names in hindi.
+- Disable search button if loading is in progress.
+- 
 
 
 ====================================

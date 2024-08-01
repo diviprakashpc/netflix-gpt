@@ -7,8 +7,8 @@ import { emptyMoviesForShimmer } from '../utils/constants';
 const MovieList = ({ title, id }) => {
   const [isLoading, isError] = useGetMoviesBasedOnCategory(id);
   let movies = useSelector((store) => store.movies.movieList[id])
-  let moviesToRender = isLoading ? emptyMoviesForShimmer : movies
   const showShimmer = isLoading || isError 
+  let moviesToRender = showShimmer ? emptyMoviesForShimmer : movies
   return (
     <div className='px-4 mt-4'>
     <h1 className='text-lg md:text-3xl py-4 text-white'>{title}</h1>

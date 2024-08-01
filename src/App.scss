@@ -131,7 +131,7 @@
 
   @keyframes shimmer-card-animation {
     0% {
-      background-color:hsl(200,20%,70%)
+      background-color:hsl(200,20%,95%)
     }
     100%{
       background-color: hsl(200, 20%, 95%);
@@ -151,3 +151,24 @@
     row-gap: 0.5rem;
     column-gap: 2.5rem;
   }
+
+  .glowing-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff4e4e 0%, #ff3333 30%, #ff0000 50%, #cc0000 70%, #990000 90%);
+    -webkit-animation: glowing 1s ease-in-out infinite alternate;
+    -moz-animation: glowing 1s ease-in-out infinite alternate;
+    animation: glowing 1s ease-in-out infinite alternate;
+    border: 0px;
+  }
+  
+  @keyframes glowing {
+    from {
+      box-shadow:  0 0 30px #ff6666, 0 0 40px #ff3333, 0 0 50px #ff0000, 0 0 60px #cc0000, 0 0 70px #990000;
+    }
+    to {
+      box-shadow:  0 0 40px #ff3333, 0 0 50px #ff0000, 0 0 60px #cc0000, 0 0 70px #990000, 0 0 80px #660000;
+    }
+  }
+  

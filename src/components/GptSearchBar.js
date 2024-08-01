@@ -1,9 +1,7 @@
 import React, { useRef } from 'react'
 import { lang } from '../utils/languageConstant'
 import { useDispatch, useSelector } from 'react-redux'
-import { API_OPTIONS } from '../utils/constants'
-import { addGptMovieResult } from '../utils/gptSlice'
-import {model} from '../utils/genAi'
+import { fetchSearchMovieResultsFromTmdb } from '../async-thunks/fetchSearchMovieResultsFromTmdbThunk'
 
 
 const GptSearchBar = () => {
@@ -30,27 +28,11 @@ const GptSearchBar = () => {
     
         // const gptMovies = gptResults.split(",")
         
-        const gptMovies = ['Koi Mil Gaya', '3 Idiots', 'Andaz apna apna', 'Hera Pheri']
+        const gptMovies = ['Koi Mil Gaya', '3 Idiots', 'Andaz apna apna', 'Hera Pheri','Koi Mil Gaya', '3 Idiots', 'Andaz apna apna', 'Hera Pheri']
 
-        const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie))
-        // We will get array of promises.
-        const tmdbResults = await Promise.all(promiseArray)
-        dispatch(addGptMovieResult({
-            movieNames : gptMovies,
-            movieResults : tmdbResults
-        }))
+       const x = await dispatch(fetchSearchMovieResultsFromTmdb({gptMovies : gptMovies})).unwrap();
+       console.log(x, "UNWRAPPED")
     }
-
-    const searchMovieTMDB = async (movie) => {
-        const data = await fetch("https://api.themoviedb.org/3/search/movie?query="+movie+"&include_adult=false&language=en-US&page=1", API_OPTIONS)
-
-        const json = await data.json();
-
-        return json.results;
-
-    }
-
-
 
   return (
     <div className=' p-4 flex justify-center w-full'>
